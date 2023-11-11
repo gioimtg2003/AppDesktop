@@ -156,21 +156,26 @@ namespace QuanLyKho
                     using (var db = new Context())
                     {
                         var importDetail = db.ImportDetail.Single(import => import.ImportDetailID == importDetailID);
-                        var stockDetail = db.StockDetails.Single(i => i.StockID == stockID && i.ProductID == productID && i.UnitID == importDetailUnitID);
-                        if (Convert.ToInt32(stockDetail.Quantity) > 0)
+                        if (MessageBox.Show("Bạn muốn xóa " + importDetail.ImportDetailID, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            stockDetail.Quantity -= importDetailQuantity;
-                            db.SaveChanges();
-                            if (stockDetail.Quantity <= 0)
+                            var stockDetail = db.StockDetails.Single(i => i.StockID == stockID && i.ProductID == productID && i.UnitID == importDetailUnitID);
+                            if (Convert.ToInt32(stockDetail.Quantity) > 0)
                             {
-                                db.Remove(stockDetail);
+                                stockDetail.Quantity -= importDetailQuantity;
                                 db.SaveChanges();
+                                if (stockDetail.Quantity <= 0)
+                                {
+                                    db.Remove(stockDetail);
+                                    db.SaveChanges();
+                                }
                             }
+                            db.Remove(importDetail);
+                            db.SaveChanges();
+                            loadDataDetail();
                         }
-                        db.Remove(importDetail);
-                        db.SaveChanges();
+                        
                     }
-                    loadDataDetail();
+                    
                 }catch(Exception ex)
                 {
                     MessageBox.Show("Error: " +ex.Message);

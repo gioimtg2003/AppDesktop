@@ -29,7 +29,8 @@ namespace QuanLyKho
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //LoginForm loginForm= new LoginForm();
+            Login loginForm = new Login();
+            loginForm.ShowDialog();
             //if (loginForm.ShowDialog() == DialogResult.OK)
             //{
             //}

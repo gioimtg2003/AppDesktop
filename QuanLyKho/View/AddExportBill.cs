@@ -22,7 +22,11 @@ namespace QuanLyKho
 
         private void AddExportBill_Load(object sender, EventArgs e)
         {
-
+            comboBoxCustomer.DisplayMember = "Name";
+            comboBoxCustomer.ValueMember = "CustomerID";
+            comboBoxCustomer.DataSource = db.Customers.Select(
+                customer => new { Name = customer.Name, CustomerID = customer.CustomerID }
+                ).ToList();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -37,12 +41,7 @@ namespace QuanLyKho
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(maskedTextBoxSuplier.Text))
-            {
-                toolTip1.Show("Vui lòng không để trống nhà cung cấp", maskedTextBoxSuplier, maskedTextBoxSuplier.Width, 0, 1000);
-                maskedTextBoxSuplier.Focus();
-                return;
-            }
+            
             if (string.IsNullOrEmpty(maskedTextBoxEmail.Text))
             {
                 toolTip1.Show("Vui lòng không để trống email", maskedTextBoxEmail, maskedTextBoxEmail.Width, 0, 1000);
@@ -69,26 +68,16 @@ namespace QuanLyKho
             }
             try
             {
-                Customer customer = new Customer();
-                customer.Name = maskedTextBoxSuplier.Text;
-                customer.Address = maskedTextBoxAddress.Text;
-                customer.Email = maskedTextBoxEmail.Text;
-                customer.Phone = maskedTextBoxPhone.Text;
-                db.Customers.Add(customer);
-                db.SaveChanges();
+               
                 var exportBill = new ExportBill();
                 exportBill.Description = maskedTextBoxDescription.Text.ToString();
                 exportBill.AdministratorID = 1;
                 exportBill.CreateDate = dateTimePickerCreateBill.Value.Date;
-                exportBill.CustomerID = customer.CustomerID;
+                exportBill.CustomerID = Convert.ToInt32(comboBoxCustomer.SelectedValue);
                 db.ExportBills.Add(exportBill);
                 db.SaveChanges();
                 addBill?.Invoke(this, EventArgs.Empty);
                 toolTip1.Show("Tạo thành công", button2, button2.Width, 0, 2000);
-                maskedTextBoxSuplier.Text = null;
-                maskedTextBoxAddress.Text = null;
-                maskedTextBoxEmail.Text = null;
-                maskedTextBoxPhone.Text = null;
                 maskedTextBoxDescription.Text = null;
 
 
@@ -102,6 +91,23 @@ namespace QuanLyKho
         private void maskedTextBoxNameAdmin_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void comboBoxCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var Customer = db.Customers.Single(
+                i => i.CustomerID == Convert.ToInt32(comboBoxCustomer.SelectedValue));
+                comboBoxCustomer.Text = Customer.Name;
+                maskedTextBoxAddress.Text = Customer.Address;
+                maskedTextBoxEmail.Text = Customer.Email;
+                maskedTextBoxPhone.Text = Customer.Phone;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

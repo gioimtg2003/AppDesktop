@@ -105,16 +105,19 @@ namespace QuanLyKho
 
                     int exportProductDetailID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ExportProductDetailID"].Value);
                     var remove = db.ExportProductDetails.Single(i => i.ExportProductDetailID == exportProductDetailID);
-                    var addQuantity = db.StockDetails.Single(i => i.StockDetailID == remove.StockDetailID);
-                    addQuantity.Quantity += remove.Quantity;
-                    db.SaveChanges();
-                    db.ExportProductDetails.Remove(remove);
-                    db.SaveChanges();
-                    loadData();
+                    if (MessageBox.Show("Bạn muốn xóa " + remove.ExportProductDetailID, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        var addQuantity = db.StockDetails.Single(i => i.StockDetailID == remove.StockDetailID);
+                        addQuantity.Quantity += remove.Quantity;
+                        db.SaveChanges();
+                        db.ExportProductDetails.Remove(remove);
+                        db.SaveChanges();
+                        loadData();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show(ex.Message , "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -232,6 +235,11 @@ namespace QuanLyKho
                 e.Cancel = true;
                 return;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            toolTip1.Show("Lưu thành công", button2, button2.Width, 0, 1000);
         }
     }
 }

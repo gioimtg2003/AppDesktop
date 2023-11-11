@@ -44,10 +44,10 @@
             this.maskedTextBoxAddress = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBoxEmail = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxSuplier = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -146,6 +146,7 @@
             // maskedTextBoxPhone
             // 
             this.maskedTextBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBoxPhone.Enabled = false;
             this.maskedTextBoxPhone.Location = new System.Drawing.Point(622, 64);
             this.maskedTextBoxPhone.Name = "maskedTextBoxPhone";
             this.maskedTextBoxPhone.Size = new System.Drawing.Size(197, 27);
@@ -164,6 +165,7 @@
             // maskedTextBoxAddress
             // 
             this.maskedTextBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBoxAddress.Enabled = false;
             this.maskedTextBoxAddress.Location = new System.Drawing.Point(149, 64);
             this.maskedTextBoxAddress.Name = "maskedTextBoxAddress";
             this.maskedTextBoxAddress.Size = new System.Drawing.Size(358, 27);
@@ -182,18 +184,11 @@
             // maskedTextBoxEmail
             // 
             this.maskedTextBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBoxEmail.Enabled = false;
             this.maskedTextBoxEmail.Location = new System.Drawing.Point(513, 14);
             this.maskedTextBoxEmail.Name = "maskedTextBoxEmail";
             this.maskedTextBoxEmail.Size = new System.Drawing.Size(306, 27);
             this.maskedTextBoxEmail.TabIndex = 11;
-            // 
-            // maskedTextBoxSuplier
-            // 
-            this.maskedTextBoxSuplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBoxSuplier.Location = new System.Drawing.Point(149, 12);
-            this.maskedTextBoxSuplier.Name = "maskedTextBoxSuplier";
-            this.maskedTextBoxSuplier.Size = new System.Drawing.Size(268, 27);
-            this.maskedTextBoxSuplier.TabIndex = 10;
             // 
             // label2
             // 
@@ -218,6 +213,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.comboBoxCustomer);
             this.panel1.Controls.Add(this.maskedTextBoxDescription);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.maskedTextBoxPhone);
@@ -225,13 +221,21 @@
             this.panel1.Controls.Add(this.maskedTextBoxAddress);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.maskedTextBoxEmail);
-            this.panel1.Controls.Add(this.maskedTextBoxSuplier);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(29, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 157);
             this.panel1.TabIndex = 43;
+            // 
+            // comboBoxCustomer
+            // 
+            this.comboBoxCustomer.FormattingEnabled = true;
+            this.comboBoxCustomer.Location = new System.Drawing.Point(149, 14);
+            this.comboBoxCustomer.Name = "comboBoxCustomer";
+            this.comboBoxCustomer.Size = new System.Drawing.Size(302, 28);
+            this.comboBoxCustomer.TabIndex = 18;
+            this.comboBoxCustomer.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomer_SelectedIndexChanged);
             // 
             // AddExportBill
             // 
@@ -273,9 +277,9 @@
         private MaskedTextBox maskedTextBoxAddress;
         private Label label3;
         private MaskedTextBox maskedTextBoxEmail;
-        private MaskedTextBox maskedTextBoxSuplier;
         private Label label2;
         private Label label1;
         private Panel panel1;
+        private ComboBox comboBoxCustomer;
     }
 }

@@ -70,8 +70,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ExportProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportProductDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +78,8 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ExportProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -130,6 +130,7 @@
             this.button2.TabIndex = 39;
             this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -518,26 +519,6 @@
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dateTimePickerCreateBill);
-            this.panel2.Controls.Add(this.maskedTextBoxNameAdmin);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(864, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 57);
-            this.panel2.TabIndex = 26;
-            // 
-            // ExportProductDetail
-            // 
-            this.ExportProductDetail.DataPropertyName = "ExportProductDetail";
-            this.ExportProductDetail.HeaderText = "Mã chi tiết";
-            this.ExportProductDetail.MinimumWidth = 6;
-            this.ExportProductDetail.Name = "ExportProductDetail";
-            this.ExportProductDetail.Width = 90;
-            // 
             // ExportProductDetailID
             // 
             this.ExportProductDetailID.DataPropertyName = "ExportProductDetailID";
@@ -594,6 +575,26 @@
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dateTimePickerCreateBill);
+            this.panel2.Controls.Add(this.maskedTextBoxNameAdmin);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(864, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(571, 57);
+            this.panel2.TabIndex = 26;
+            // 
+            // ExportProductDetail
+            // 
+            this.ExportProductDetail.DataPropertyName = "ExportProductDetail";
+            this.ExportProductDetail.HeaderText = "Mã chi tiết";
+            this.ExportProductDetail.MinimumWidth = 6;
+            this.ExportProductDetail.Name = "ExportProductDetail";
+            this.ExportProductDetail.Width = 90;
             // 
             // ProcessExportDetail
             // 
