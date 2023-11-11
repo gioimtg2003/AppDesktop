@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\AddExportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\AddImportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\EditExportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\EditImportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\ExportManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\ImportManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\ProcessExportDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\ProcessImportDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
