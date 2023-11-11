@@ -153,7 +153,6 @@ namespace QuanLyKho
                 maskedTextBoxAddress.Text = Supplier.Address;
                 maskedTextBoxEmail.Text = Supplier.Email ;
                 maskedTextBoxPhone.Text = Supplier.Phone;
-
             }
             catch (Exception ex)
             {

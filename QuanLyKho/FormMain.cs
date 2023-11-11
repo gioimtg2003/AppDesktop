@@ -64,6 +64,13 @@ namespace QuanLyKho
             form.Show();
         }
 
-        
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            if (Utility.isOpeningForm("CustomerManage")) return;
+            var form = new CustomerManage();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

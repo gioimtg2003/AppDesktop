@@ -70,3 +70,6 @@ C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-window
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ImportManage.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ProcessExportDetail.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ProcessImportDetail.resources
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.AddCustomer.resources
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.CustomerManage.resources
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.EditCustomer.resources
