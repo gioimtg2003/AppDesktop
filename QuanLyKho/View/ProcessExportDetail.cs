@@ -56,7 +56,8 @@ namespace QuanLyKho
             ///
             comboBoxUnit.DisplayMember = "Name";
             comboBoxUnit.ValueMember = "UnitID";
-            
+            maskedTextBoxNameAdmin.Text = Utility.Employee.Name;
+
         }
 
         private void comboBoxStock_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,21 +72,6 @@ namespace QuanLyKho
             comboBoxProduct.DataSource = dataStockDetail;
 
         }
-
-      
-
-        private void comboBoxProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         //   MessageBox.Show(comboBoxProduct.SelectedValue.ToString());
-            //productID = Convert.ToInt64(comboBoxProduct.SelectedValue);
-            //var Unit = db.StockDetails
-            //    .Where(i => i.StockID == stockID && i.ProductID == productID)
-            //    .Include(i => i.Unit)
-            //    .Select(i => new {Name = i.Unit.Name, UnitID = i.Unit.UnitID})
-            //    .ToList();
-            //comboBoxUnit.DataSource = Unit;
-        }
-
         private void comboBoxUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
             unitID = Convert.ToInt32(comboBoxUnit.SelectedValue);
@@ -148,29 +134,35 @@ namespace QuanLyKho
                 maskedTextBoxPrice.Focus();
                 return;
             }
-            ExportBillDetail exportBillDetail = new ExportBillDetail();
-            exportBillDetail.ExportBillID = exportBillID;
-            db.ExportBillDetails.Add(exportBillDetail);
-            db.SaveChanges();
-            ExportProductDetail exportProductDetail = new ExportProductDetail();
-            exportProductDetail.ExportBillDetailID = exportBillDetail.ExportBillDetailID;
-            exportProductDetail.Quantity = Convert.ToInt32(maskedTextBoxQuantity.Text);
-            exportProductDetail.StockDetailID = stockDetailID;
-            exportProductDetail.Price = Convert.ToInt32(maskedTextBoxPrice.Text);
-            db.ExportProductDetails.Add(exportProductDetail);
-            db.SaveChanges();
-            var handleQUantity = db.StockDetails
-                .Where(i => i.StockDetailID == stockDetailID)
-                .SingleOrDefault();
-            if (handleQUantity != null)
+           try
             {
-                handleQUantity.Quantity -= Convert.ToInt32(maskedTextBoxQuantity.Text);
-                
+                ExportBillDetail exportBillDetail = new ExportBillDetail();
+                exportBillDetail.ExportBillID = exportBillID;
+                db.ExportBillDetails.Add(exportBillDetail);
                 db.SaveChanges();
+                ExportProductDetail exportProductDetail = new ExportProductDetail();
+                exportProductDetail.ExportBillDetailID = exportBillDetail.ExportBillDetailID;
+                exportProductDetail.Quantity = Convert.ToInt32(maskedTextBoxQuantity.Text);
+                exportProductDetail.StockDetailID = stockDetailID;
+                exportProductDetail.Price = Convert.ToInt32(maskedTextBoxPrice.Text);
+                db.ExportProductDetails.Add(exportProductDetail);
+                db.SaveChanges();
+                var handleQUantity = db.StockDetails
+                    .Where(i => i.StockDetailID == stockDetailID)
+                    .SingleOrDefault();
+                if (handleQUantity != null)
+                {
+                    handleQUantity.Quantity -= Convert.ToInt32(maskedTextBoxQuantity.Text);
+                    db.SaveChanges();
+                }
+                loadData();
+                toolTip1.Show("Thêm thành công", button1, button1.Width, 0, 1000);
+                maskedTextBoxQuantity.Text = null;
+                maskedTextBoxPrice.Text = null;
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            toolTip1.Show("Thêm thành công", button1, button1.Width, 0, 1000);
-            maskedTextBoxQuantity.Text = null;
-            maskedTextBoxPrice.Text = null;
         }
 
         private void maskedTextBoxQuantity_Validating(object sender, CancelEventArgs e)
@@ -209,6 +201,13 @@ namespace QuanLyKho
                 .Select(i => new { ExportProductDetailID = i.ExportProductDetailID, ProductName = i.StockDetail.Product.Name, StockName = i.StockDetail.Stock.Name, UnitName = i.StockDetail.Unit.Name, Price  = i.Price, Quantity = i.Quantity,   Total = i.Quantity * i.Price})
                 .ToList();
             dataGridView1.DataSource = data;
+
+            int total = 0;
+            foreach (var i in data)
+            {
+                total+= i.Total;
+            }
+            TotalPrice.Text = total.ToString() +"đ";
         }
 
         private void button3_Click(object sender, EventArgs e)

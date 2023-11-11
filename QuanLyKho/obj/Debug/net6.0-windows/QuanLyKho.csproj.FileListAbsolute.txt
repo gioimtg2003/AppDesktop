@@ -1,4 +1,3 @@
-C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.csproj.AssemblyReference.cache
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\QuanLyKho.exe
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\QuanLyKho.dll.config
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\QuanLyKho.deps.json
@@ -49,7 +48,11 @@ C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-window
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.csproj.AssemblyReference.cache
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.EditStock.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.FormMain.resources
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.Properties.Resources.resources
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.StockManage.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.AddCustomer.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.AddExportBill.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.AddImportBill.resources
@@ -61,6 +64,7 @@ C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-window
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.EditProduct.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ExportManage.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ImportManage.resources
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.Login.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ProcessExportDetail.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ProcessImportDetail.resources
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.ProductManage.resources
@@ -75,5 +79,4 @@ C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-window
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.pdb
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.genruntimeconfig.cache
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\ref\QuanLyKho.dll
-C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.Login.resources
-C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.Properties.Resources.resources
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\net6.0-windows\QuanLyKho.AddStock.resources

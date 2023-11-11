@@ -15,6 +15,7 @@ namespace QuanLyKho
 
         private void AddImportBill_Load(object sender, EventArgs e)
         {
+            maskedTextBoxNameAdmin.Text = Utility.Employee.Name;
             // đổ dữ liệu cho combobox kho
             comboBoxStock.DisplayMember = "Name";
             comboBoxStock.ValueMember = "StockID";
@@ -70,7 +71,7 @@ namespace QuanLyKho
 
                 ImportBill importBill = new ImportBill();
                 importBill.Description = maskedTextBoxDescription.Text.ToString();
-                importBill.AdministratorID = 1;
+                importBill.AdministratorID = Utility.Employee.AdministratorID;
                 importBill.StockID = stockID;
                 importBill.CreateDate = dateTimePickerCreateBill.Value.Date;
                 importBill.CustomerID = Convert.ToInt32(comboBoxSupplier.SelectedValue);

@@ -27,6 +27,7 @@ namespace QuanLyKho
             comboBoxCustomer.DataSource = db.Customers.Select(
                 customer => new { Name = customer.Name, CustomerID = customer.CustomerID }
                 ).ToList();
+            maskedTextBoxNameAdmin.Text = Utility.Employee.Name;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -71,7 +72,7 @@ namespace QuanLyKho
                
                 var exportBill = new ExportBill();
                 exportBill.Description = maskedTextBoxDescription.Text.ToString();
-                exportBill.AdministratorID = 1;
+                exportBill.AdministratorID = Utility.Employee.AdministratorID;
                 exportBill.CreateDate = dateTimePickerCreateBill.Value.Date;
                 exportBill.CustomerID = Convert.ToInt32(comboBoxCustomer.SelectedValue);
                 db.ExportBills.Add(exportBill);

@@ -33,7 +33,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TotalPrice = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.maskedTextBoxDescription = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.TotalPrice);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Location = new System.Drawing.Point(5, 309);
             this.panel5.Name = "panel5";
@@ -132,14 +132,14 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // TotalPrice
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(131, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(421, 27);
-            this.textBox1.TabIndex = 38;
+            this.TotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TotalPrice.Enabled = false;
+            this.TotalPrice.Location = new System.Drawing.Point(131, 19);
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.Size = new System.Drawing.Size(421, 27);
+            this.TotalPrice.TabIndex = 38;
             // 
             // label14
             // 
@@ -436,7 +436,6 @@
             this.comboBoxProduct.Name = "comboBoxProduct";
             this.comboBoxProduct.Size = new System.Drawing.Size(438, 28);
             this.comboBoxProduct.TabIndex = 30;
-            this.comboBoxProduct.SelectedIndexChanged += new System.EventHandler(this.comboBoxProduct_SelectedIndexChanged);
             this.comboBoxProduct.SelectionChangeCommitted += new System.EventHandler(this.comboBoxProduct_SelectionChangeCommitted);
             // 
             // label10
@@ -632,7 +631,7 @@
         private Panel panel5;
         private Button button3;
         private Button button2;
-        private TextBox textBox1;
+        private TextBox TotalPrice;
         private Label label14;
         private MaskedTextBox maskedTextBoxDescription;
         private Label label5;

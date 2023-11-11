@@ -23,6 +23,7 @@ namespace QuanLyKho
 
         private void ProcessImportDetail_Load(object sender, EventArgs e)
         {
+            maskedTextBoxNameAdmin.Text = Utility.Employee.Name;
             using (var db = new Context())
             {
                 comboBoxImportBill.DataSource = db.ImportBills.Select(ip => ip.ImportBillID).ToList();

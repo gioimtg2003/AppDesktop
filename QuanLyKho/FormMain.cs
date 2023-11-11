@@ -30,14 +30,27 @@ namespace QuanLyKho
         private void FormMain_Load(object sender, EventArgs e)
         {
             Login loginForm = new Login();
-            loginForm.ShowDialog();
-            //if (loginForm.ShowDialog() == DialogResult.OK)
-            //{
-            //}
-            //else
-            //{
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                if(Utility.Employee.Role != 1)
+                {
+                    foreach(ToolStripMenuItem item in menuStrip1.Items)
+                    {
+                        foreach (ToolStripItem i in item.DropDownItems)
+                        {
+                            if(i.Name.Contains("Add") && Utility.Employee.Role == 2)
+                            {
+                                break;
+                            }
+                            i.Enabled = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
 
-            //}
+            }
         }
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
@@ -80,6 +93,43 @@ namespace QuanLyKho
             if (Utility.isOpeningForm("ProductManage")) return;
             var form = new ProductManage();
             form.MdiParent = this;
+            form.Show();
+        }
+
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            this.IsMdiContainer = true;
+            if (Utility.isOpeningForm("StockManage")) return;
+            var form = new StockManage();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void AddImportStock_Click(object sender, EventArgs e)
+        {
+            if (Utility.isOpeningForm("AddImportBill")) return;
+            var form = new AddImportBill();
+            form.Show();
+        }
+
+        private void AddExportStock_Click(object sender, EventArgs e)
+        {
+            if (Utility.isOpeningForm("AddExportBill")) return;
+            var form = new AddExportBill();
+            form.Show();
+        }
+
+        private void AddCustomer_Click(object sender, EventArgs e)
+        {
+            if (Utility.isOpeningForm("AddCustomer")) return;
+            var form = new AddCustomer();
+            form.Show();
+        }
+
+        private void AddProduct_Click(object sender, EventArgs e)
+        {
+            if (Utility.isOpeningForm("AddProduct")) return;
+            var form = new AddProduct();
             form.Show();
         }
     }

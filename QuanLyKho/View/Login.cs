@@ -57,7 +57,6 @@ namespace QuanLyKho
         {
             Application.Exit();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(this.textBox2.Text))
@@ -75,11 +74,17 @@ namespace QuanLyKho
             using(var db = new Context())
             {
                 Utility.Employee = db.Administrators.SingleOrDefault(i => i.UserName == textBox2.Text && i.Password == textBox1.Text);
-                if (Utility.Employee != null)
-                {
-                    DialogResult = DialogResult.OK;
-                }
             }
+            if (Utility.Employee != null)
+            {
+              
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
