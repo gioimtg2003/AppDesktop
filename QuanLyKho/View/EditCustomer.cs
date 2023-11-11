@@ -139,7 +139,5 @@ namespace QuanLyKho
             txtEmail.Text = customer.Email;
 
         }
-
-        
     }
 }

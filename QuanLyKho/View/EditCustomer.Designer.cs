@@ -28,130 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            btClose = new Button();
-            btSave = new Button();
-            txtAddress = new TextBox();
-            txtPhone = new TextBox();
-            txtEmail = new TextBox();
-            txtName = new TextBox();
-            toolTip1 = new ToolTip(components);
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btClose = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.SuspendLayout();
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(410, 215);
-            label4.Name = "label4";
-            label4.Size = new Size(46, 20);
-            label4.TabIndex = 46;
-            label4.Text = "Email";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(410, 215);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Email";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(62, 215);
-            label3.Name = "label3";
-            label3.Size = new Size(97, 20);
-            label3.TabIndex = 45;
-            label3.Text = "Số điện thoại";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(62, 215);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Số điện thoại";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(62, 132);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 20);
-            label2.TabIndex = 44;
-            label2.Text = "Địa chỉ";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(62, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Địa chỉ";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(62, 69);
-            label1.Name = "label1";
-            label1.Size = new Size(116, 20);
-            label1.TabIndex = 43;
-            label1.Text = "Tên Khách Hàng";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(62, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 20);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Tên Khách Hàng";
             // 
             // btClose
             // 
-            btClose.Location = new Point(465, 297);
-            btClose.Name = "btClose";
-            btClose.Size = new Size(94, 29);
-            btClose.TabIndex = 42;
-            btClose.Text = "Đóng";
-            btClose.UseVisualStyleBackColor = true;
-            btClose.Click += btClose_Click;
+            this.btClose.Location = new System.Drawing.Point(465, 297);
+            this.btClose.Name = "btClose";
+            this.btClose.Size = new System.Drawing.Size(94, 29);
+            this.btClose.TabIndex = 42;
+            this.btClose.Text = "Đóng";
+            this.btClose.UseVisualStyleBackColor = true;
+            this.btClose.Click += new System.EventHandler(this.btClose_Click);
             // 
             // btSave
             // 
-            btSave.Location = new Point(243, 297);
-            btSave.Name = "btSave";
-            btSave.Size = new Size(94, 29);
-            btSave.TabIndex = 41;
-            btSave.Text = "Lưu";
-            btSave.UseVisualStyleBackColor = true;
-            btSave.Click += btSave_Click;
+            this.btSave.Location = new System.Drawing.Point(243, 297);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(94, 29);
+            this.btSave.TabIndex = 41;
+            this.btSave.Text = "Lưu";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(184, 125);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(527, 27);
-            txtAddress.TabIndex = 38;
-            txtAddress.Validating += txtAddress_Validating;
+            this.txtAddress.Location = new System.Drawing.Point(184, 125);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(527, 27);
+            this.txtAddress.TabIndex = 38;
+            this.txtAddress.Validating += new System.ComponentModel.CancelEventHandler(this.txtAddress_Validating);
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(184, 208);
-            txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(188, 27);
-            txtPhone.TabIndex = 39;
-            txtPhone.Validating += txtPhone_Validating;
+            this.txtPhone.Location = new System.Drawing.Point(184, 208);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(188, 27);
+            this.txtPhone.TabIndex = 39;
+            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtPhone_Validating);
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(487, 208);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(125, 27);
-            txtEmail.TabIndex = 40;
-            txtEmail.Validating += txtEmail_Validating;
+            this.txtEmail.Location = new System.Drawing.Point(487, 208);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(125, 27);
+            this.txtEmail.TabIndex = 40;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // txtName
             // 
-            txtName.Location = new Point(184, 66);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(320, 27);
-            txtName.TabIndex = 37;
-            txtName.Validating += txtName_Validating;
+            this.txtName.Location = new System.Drawing.Point(184, 66);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(320, 27);
+            this.txtName.TabIndex = 37;
+            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.txtName_Validating);
             // 
-            // fEditCustomer
+            // EditCustomer
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(btClose);
-            Controls.Add(btSave);
-            Controls.Add(txtAddress);
-            Controls.Add(txtPhone);
-            Controls.Add(txtEmail);
-            Controls.Add(txtName);
-            Name = "fEditCustomer";
-            Text = "Sửa đổi khách hàng ";
-            WindowState = FormWindowState.Maximized;
-            FormClosing += fEditCustomer_FormClosing;
-            Load += fEditCustomer_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btClose);
+            this.Controls.Add(this.btSave);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtName);
+            this.Name = "EditCustomer";
+            this.Text = "Sửa đổi khách hàng ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fEditCustomer_FormClosing);
+            this.Load += new System.EventHandler(this.fEditCustomer_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

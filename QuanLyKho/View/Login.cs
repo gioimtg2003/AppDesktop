@@ -29,6 +29,7 @@ namespace QuanLyKho
             this.textBox1.AutoSize = false;
             this.textBox2.Size = new System.Drawing.Size(247, 45);
             this.textBox1.Size = new System.Drawing.Size(247, 45);
+            this.pictureBox1.Image = new Bitmap(Utility.ImagePath + "BackgroundLogin.jpg");
         }
         private void YourForm_MouseDown(object sender, MouseEventArgs e)
         {

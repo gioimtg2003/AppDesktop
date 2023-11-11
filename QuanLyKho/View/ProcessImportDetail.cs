@@ -68,7 +68,9 @@ namespace QuanLyKho
             {
                 int total = 0;
                 var details = db.ImportDetail.Where(i => i.ImportBillID == Convert.ToInt32(comboBoxImportBill.SelectedValue)).Include(
-                    i => i.Product).Select(i => new ImportProduct { ImportDetailID = i.ImportDetailID , ProductID = i.ProductID, ProductName = i.Product.Name, ProductPrice = i.Price, Quantity = i.Quantity, UnitID = i.UnitID}).ToList();
+                    i => i.Product).Select(
+                    i => new ImportProduct { ImportDetailID = i.ImportDetailID , ProductID = i.ProductID, ProductName = i.Product.Name, ProductPrice = i.Price, Quantity = i.Quantity, UnitID = i.UnitID})
+                    .ToList();
                 foreach(var item in details)
                 {
                     total += Convert.ToInt32(item.TotalPrice);
@@ -102,8 +104,8 @@ namespace QuanLyKho
                         stock.Quantity = Convert.ToInt32(maskedTextBoxQuantity.Text);
                         db.StockDetails.Add(stock);
                         db.SaveChanges();
-                }
-                else
+                    }
+                    else
                     {
                     stockDetail.Quantity += Convert.ToInt32(maskedTextBoxQuantity.Text);
                         db.SaveChanges();

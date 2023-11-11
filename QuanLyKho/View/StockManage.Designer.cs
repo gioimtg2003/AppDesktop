@@ -34,11 +34,6 @@ namespace QuanLyKho
             this.cbStock = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IDKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.MaKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +41,11 @@ namespace QuanLyKho
             this.MoTaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbsoluongkho = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.IDKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +96,7 @@ namespace QuanLyKho
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -111,50 +111,8 @@ namespace QuanLyKho
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(611, 680);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // IDKho
-            // 
-            this.IDKho.DataPropertyName = "StockID";
-            this.IDKho.HeaderText = "Mã Kho";
-            this.IDKho.MinimumWidth = 6;
-            this.IDKho.Name = "IDKho";
-            this.IDKho.Width = 89;
-            // 
-            // StockName
-            // 
-            this.StockName.DataPropertyName = "Name";
-            this.StockName.HeaderText = "Tên Kho";
-            this.StockName.MinimumWidth = 6;
-            this.StockName.Name = "StockName";
-            this.StockName.Width = 91;
-            // 
-            // StockAddress
-            // 
-            this.StockAddress.DataPropertyName = "Address";
-            this.StockAddress.HeaderText = "Địa chỉ";
-            this.StockAddress.MinimumWidth = 6;
-            this.StockAddress.Name = "StockAddress";
-            this.StockAddress.Width = 84;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.Text = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 41;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 59;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -163,6 +121,7 @@ namespace QuanLyKho
             this.dataGridView2.AllowUserToOrderColumns = true;
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKho,
@@ -182,7 +141,6 @@ namespace QuanLyKho
             this.MaKho.HeaderText = "Mã Kho";
             this.MaKho.MinimumWidth = 6;
             this.MaKho.Name = "MaKho";
-            this.MaKho.Width = 125;
             // 
             // MaSP
             // 
@@ -190,7 +148,6 @@ namespace QuanLyKho
             this.MaSP.HeaderText = "Mã Sản Phẩm";
             this.MaSP.MinimumWidth = 6;
             this.MaSP.Name = "MaSP";
-            this.MaSP.Width = 125;
             // 
             // TenSP
             // 
@@ -198,7 +155,6 @@ namespace QuanLyKho
             this.TenSP.HeaderText = "Tên Sản Phẩm";
             this.TenSP.MinimumWidth = 6;
             this.TenSP.Name = "TenSP";
-            this.TenSP.Width = 125;
             // 
             // MoTaSP
             // 
@@ -206,7 +162,6 @@ namespace QuanLyKho
             this.MoTaSP.HeaderText = "Mô Tả Sản Phẩm";
             this.MoTaSP.MinimumWidth = 6;
             this.MoTaSP.Name = "MoTaSP";
-            this.MoTaSP.Width = 125;
             // 
             // lbsoluongkho
             // 
@@ -216,6 +171,43 @@ namespace QuanLyKho
             this.lbsoluongkho.Size = new System.Drawing.Size(108, 20);
             this.lbsoluongkho.TabIndex = 6;
             this.lbsoluongkho.Text = "Số lượng kho : ";
+            // 
+            // IDKho
+            // 
+            this.IDKho.DataPropertyName = "StockID";
+            this.IDKho.HeaderText = "Mã Kho";
+            this.IDKho.MinimumWidth = 6;
+            this.IDKho.Name = "IDKho";
+            // 
+            // StockName
+            // 
+            this.StockName.DataPropertyName = "Name";
+            this.StockName.HeaderText = "Tên Kho";
+            this.StockName.MinimumWidth = 6;
+            this.StockName.Name = "StockName";
+            // 
+            // StockAddress
+            // 
+            this.StockAddress.DataPropertyName = "Address";
+            this.StockAddress.HeaderText = "Địa chỉ";
+            this.StockAddress.MinimumWidth = 6;
+            this.StockAddress.Name = "StockAddress";
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // StockManage
             // 
@@ -252,14 +244,14 @@ namespace QuanLyKho
         private DataGridView dataGridView2;
         private Label lbsoluongkho;
         private ToolTip toolTip1;
+        private DataGridViewTextBoxColumn MaKho;
+        private DataGridViewTextBoxColumn MaSP;
+        private DataGridViewTextBoxColumn TenSP;
+        private DataGridViewTextBoxColumn MoTaSP;
         private DataGridViewTextBoxColumn IDKho;
         private DataGridViewTextBoxColumn StockName;
         private DataGridViewTextBoxColumn StockAddress;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
-        private DataGridViewTextBoxColumn MaKho;
-        private DataGridViewTextBoxColumn MaSP;
-        private DataGridViewTextBoxColumn TenSP;
-        private DataGridViewTextBoxColumn MoTaSP;
     }
 }

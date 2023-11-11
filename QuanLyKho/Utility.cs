@@ -9,6 +9,7 @@ namespace QuanLyKho
 {
     internal class Utility
     {
+        static public string ImagePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Images\";
         public static Administrator Employee { get; set; }
         public static bool isOpeningForm(string nameForm)
         {
