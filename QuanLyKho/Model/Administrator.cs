@@ -25,9 +25,9 @@ namespace QuanLyKho.Model
         public string Password { get; set; }
         [DataType(DataType.EmailAddress)]
         [Column(TypeName = "varchar(50)")]
-        public string? Email { get; set; }
+        public string Email { get; set; }
         [Column(TypeName = "char(10)")]
-        public string? Phone { get; set; }
+        public string Phone { get; set; }
         public byte Role { get; set; }
         public ICollection<ImportBill> ImportBills { get; set; }
         public ICollection<ExportBill> exportBills { get; set; }

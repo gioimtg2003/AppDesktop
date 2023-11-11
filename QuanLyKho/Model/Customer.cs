@@ -10,7 +10,8 @@ namespace QuanLyKho.Model
 {
     internal class Customer
     {
-        public Customer() { 
+        public Customer()
+        {
             this.importBills = new HashSet<ImportBill>();
             this.exportBills = new HashSet<ExportBill>();
         }

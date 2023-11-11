@@ -67,7 +67,6 @@ namespace QuanLyKho
             try
             {
                 int stockID = Convert.ToInt32(comboBoxStock.SelectedValue);
-                
                 ImportBill importBill = new ImportBill();
                 importBill.Description = maskedTextBoxDescription.Text.ToString();
                 importBill.AdministratorID = 1;
@@ -84,7 +83,7 @@ namespace QuanLyKho
             }
             catch (Exception err)
             {
-                toolTip1.Show("Error: " + err.Message, button2, button2.Width, 0, 2000);
+                toolTip1.Show("Error: " + comboBoxSupplier.SelectedValue.ToString(), button2, button2.Width, 0, 3000);
             }
         }
 

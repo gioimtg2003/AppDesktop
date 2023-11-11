@@ -55,14 +55,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ImportDetaliID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.maskedTextBoxDescription = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,6 +69,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBoxImportBill = new System.Windows.Forms.ComboBox();
+            this.ImportDetaliID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -335,7 +335,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ImportDetaliID,
             this.ProductID,
-            this.ProductName,
+            this.IProductName,
             this.ProductPrice,
             this.Quantity,
             this.UnitID,
@@ -348,63 +348,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(835, 529);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ImportDetaliID
-            // 
-            this.ImportDetaliID.DataPropertyName = "ImportDetailID";
-            this.ImportDetaliID.HeaderText = "Mã chi tiết";
-            this.ImportDetaliID.MinimumWidth = 6;
-            this.ImportDetaliID.Name = "ImportDetaliID";
-            // 
-            // ProductID
-            // 
-            this.ProductID.DataPropertyName = "ProductID";
-            this.ProductID.HeaderText = "Mã sản phẩm";
-            this.ProductID.MinimumWidth = 6;
-            this.ProductID.Name = "ProductID";
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "Tên sản phẩm";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
-            // 
-            // ProductPrice
-            // 
-            this.ProductPrice.DataPropertyName = "ProductPrice";
-            this.ProductPrice.HeaderText = "Giá sản phẩm";
-            this.ProductPrice.MinimumWidth = 6;
-            this.ProductPrice.Name = "ProductPrice";
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Số lượng";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            // 
-            // UnitID
-            // 
-            this.UnitID.DataPropertyName = "UnitID";
-            this.UnitID.HeaderText = "Mã đơn vị";
-            this.UnitID.MinimumWidth = 6;
-            this.UnitID.Name = "UnitID";
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "TotalPrice";
-            this.Total.HeaderText = "Tổng giá";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // panel2
             // 
@@ -559,6 +502,63 @@
             this.comboBoxImportBill.TabIndex = 24;
             this.comboBoxImportBill.SelectedIndexChanged += new System.EventHandler(this.comboBoxImportBill_SelectedIndexChanged);
             // 
+            // ImportDetaliID
+            // 
+            this.ImportDetaliID.DataPropertyName = "ImportDetailID";
+            this.ImportDetaliID.HeaderText = "Mã chi tiết";
+            this.ImportDetaliID.MinimumWidth = 6;
+            this.ImportDetaliID.Name = "ImportDetaliID";
+            // 
+            // ProductID
+            // 
+            this.ProductID.DataPropertyName = "ProductID";
+            this.ProductID.HeaderText = "Mã sản phẩm";
+            this.ProductID.MinimumWidth = 6;
+            this.ProductID.Name = "ProductID";
+            // 
+            // IProductName
+            // 
+            this.IProductName.DataPropertyName = "ProductName";
+            this.IProductName.HeaderText = "Tên sản phẩm";
+            this.IProductName.MinimumWidth = 6;
+            this.IProductName.Name = "IProductName";
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.DataPropertyName = "ProductPrice";
+            this.ProductPrice.HeaderText = "Giá sản phẩm";
+            this.ProductPrice.MinimumWidth = 6;
+            this.ProductPrice.Name = "ProductPrice";
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Số lượng";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            // 
+            // UnitID
+            // 
+            this.UnitID.DataPropertyName = "UnitID";
+            this.UnitID.HeaderText = "Mã đơn vị";
+            this.UnitID.MinimumWidth = 6;
+            this.UnitID.Name = "UnitID";
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "TotalPrice";
+            this.Total.HeaderText = "Tổng giá";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
             // ProcessImportDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -635,7 +635,7 @@
         private ComboBox comboBoxImportBill;
         private DataGridViewTextBoxColumn ImportDetaliID;
         private DataGridViewTextBoxColumn ProductID;
-        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn IProductName;
         private DataGridViewTextBoxColumn ProductPrice;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn UnitID;

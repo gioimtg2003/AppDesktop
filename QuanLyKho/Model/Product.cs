@@ -17,7 +17,6 @@ namespace QuanLyKho.Model
         public long ProductID { get; set; }
         [Column(TypeName = ("nvarchar(100)"))]
         public string Name { get; set; }
-        public int Price { get; set; }
         [Column(TypeName = "nvarchar(200)")]
         public string? Description { get; set; }
         

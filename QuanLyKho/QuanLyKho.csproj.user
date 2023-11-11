@@ -1,13 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="EditCustomer.cs">
+    <Compile Update="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CustomerManage.cs">
+    <Compile Update="ProductManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AddCustomer.cs">
+    <Compile Update="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\CustomerManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormMain.cs">
@@ -26,9 +35,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="View\ExportManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="View\ImportForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="View\ImportManage.cs">

@@ -34,11 +34,9 @@ namespace QuanLyKho.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("char(16)");
 
                     b.Property<string>("Phone")
@@ -48,11 +46,9 @@ namespace QuanLyKho.Migrations
                         .HasColumnType("tinyint");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasColumnType("char(20)");
 
                     b.HasKey("AdministratorID");
@@ -82,19 +78,15 @@ namespace QuanLyKho.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerID"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("char(10)");
 
                     b.HasKey("CustomerID");
@@ -258,11 +250,7 @@ namespace QuanLyKho.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
 
                     b.HasKey("ProductID");
 
@@ -273,57 +261,49 @@ namespace QuanLyKho.Migrations
                         {
                             ProductID = 1L,
                             Description = "Bút bi Thiên Long 20Cây/hộp màu xanh",
-                            Name = "Bút bi Thiên Long",
-                            Price = 0
+                            Name = "Bút bi Thiên Long"
                         },
                         new
                         {
                             ProductID = 2L,
                             Description = "Thước kẻ 20cm hộp 30 cái",
-                            Name = "Thước kẻ 20cm",
-                            Price = 0
+                            Name = "Thước kẻ 20cm"
                         },
                         new
                         {
                             ProductID = 3L,
                             Description = "Giấy in văn phòng 1 thùng 20 xấp",
-                            Name = "Giấy in văn phòng",
-                            Price = 0
+                            Name = "Giấy in văn phòng"
                         },
                         new
                         {
                             ProductID = 4L,
                             Description = "Bút lông viết bảng (màu xanh) hộp 10 cái",
-                            Name = "Bút lông viết bảng (màu xanh)",
-                            Price = 0
+                            Name = "Bút lông viết bảng (màu xanh)"
                         },
                         new
                         {
                             ProductID = 5L,
                             Description = "Gôm/Bút tẩy xóa",
-                            Name = "Gôm/Bút tẩy xóa",
-                            Price = 0
+                            Name = "Gôm/Bút tẩy xóa"
                         },
                         new
                         {
                             ProductID = 6L,
                             Description = "Dao kéo, Băng keo",
-                            Name = "Dao kéo, Băng keo",
-                            Price = 0
+                            Name = "Dao kéo, Băng keo"
                         },
                         new
                         {
                             ProductID = 7L,
                             Description = "Túi đựng hồ sơ và tài liệu",
-                            Name = "Túi đựng hồ sơ và tài liệu",
-                            Price = 0
+                            Name = "Túi đựng hồ sơ và tài liệu"
                         },
                         new
                         {
                             ProductID = 8L,
                             Description = "Sổ tay học từ vựng",
-                            Name = "Sổ tay học từ vựng",
-                            Price = 0
+                            Name = "Sổ tay học từ vựng"
                         });
                 });
 
@@ -336,11 +316,9 @@ namespace QuanLyKho.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockID"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("StockID");
@@ -402,7 +380,6 @@ namespace QuanLyKho.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UnitID"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("UnitID");

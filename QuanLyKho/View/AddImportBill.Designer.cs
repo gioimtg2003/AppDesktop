@@ -105,6 +105,7 @@
             // maskedTextBoxPhone
             // 
             this.maskedTextBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBoxPhone.Enabled = false;
             this.maskedTextBoxPhone.Location = new System.Drawing.Point(622, 64);
             this.maskedTextBoxPhone.Name = "maskedTextBoxPhone";
             this.maskedTextBoxPhone.Size = new System.Drawing.Size(197, 27);
@@ -124,6 +125,7 @@
             // maskedTextBoxAddress
             // 
             this.maskedTextBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBoxAddress.Enabled = false;
             this.maskedTextBoxAddress.Location = new System.Drawing.Point(149, 64);
             this.maskedTextBoxAddress.Name = "maskedTextBoxAddress";
             this.maskedTextBoxAddress.Size = new System.Drawing.Size(358, 27);
@@ -143,6 +145,7 @@
             // maskedTextBoxEmail
             // 
             this.maskedTextBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.maskedTextBoxEmail.Enabled = false;
             this.maskedTextBoxEmail.Location = new System.Drawing.Point(513, 14);
             this.maskedTextBoxEmail.Name = "maskedTextBoxEmail";
             this.maskedTextBoxEmail.Size = new System.Drawing.Size(306, 27);

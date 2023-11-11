@@ -70,16 +70,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ExportProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExportProductDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ExportProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -503,7 +503,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ExportProductDetailID,
-            this.ProductName,
+            this.EProductName,
             this.StockName,
             this.UnitName,
             this.Price,
@@ -518,6 +518,26 @@
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dateTimePickerCreateBill);
+            this.panel2.Controls.Add(this.maskedTextBoxNameAdmin);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(864, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(571, 57);
+            this.panel2.TabIndex = 26;
+            // 
+            // ExportProductDetail
+            // 
+            this.ExportProductDetail.DataPropertyName = "ExportProductDetail";
+            this.ExportProductDetail.HeaderText = "Mã chi tiết";
+            this.ExportProductDetail.MinimumWidth = 6;
+            this.ExportProductDetail.Name = "ExportProductDetail";
+            this.ExportProductDetail.Width = 90;
+            // 
             // ExportProductDetailID
             // 
             this.ExportProductDetailID.DataPropertyName = "ExportProductDetailID";
@@ -525,12 +545,12 @@
             this.ExportProductDetailID.MinimumWidth = 6;
             this.ExportProductDetailID.Name = "ExportProductDetailID";
             // 
-            // ProductName
+            // EProductName
             // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "Tên sản phẩm";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
+            this.EProductName.DataPropertyName = "ProductName";
+            this.EProductName.HeaderText = "Tên sản phẩm";
+            this.EProductName.MinimumWidth = 6;
+            this.EProductName.Name = "EProductName";
             // 
             // StockName
             // 
@@ -574,26 +594,6 @@
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dateTimePickerCreateBill);
-            this.panel2.Controls.Add(this.maskedTextBoxNameAdmin);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(864, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 57);
-            this.panel2.TabIndex = 26;
-            // 
-            // ExportProductDetail
-            // 
-            this.ExportProductDetail.DataPropertyName = "ExportProductDetail";
-            this.ExportProductDetail.HeaderText = "Mã chi tiết";
-            this.ExportProductDetail.MinimumWidth = 6;
-            this.ExportProductDetail.Name = "ExportProductDetail";
-            this.ExportProductDetail.Width = 90;
             // 
             // ProcessExportDetail
             // 
@@ -669,14 +669,14 @@
         private Label label9;
         private ComboBox comboBoxStock;
         private Label label8;
+        private DataGridViewTextBoxColumn ExportProductDetail;
         private DataGridViewTextBoxColumn ExportProductDetailID;
-        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn EProductName;
         private DataGridViewTextBoxColumn StockName;
         private DataGridViewTextBoxColumn UnitName;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Total;
         private DataGridViewButtonColumn Delete;
-        private DataGridViewTextBoxColumn ExportProductDetail;
     }
 }
