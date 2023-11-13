@@ -89,16 +89,18 @@ namespace QuanLyKho
                 try
                 {
 
-                    int exportProductDetailID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ExportProductDetailID"].Value);
-                    var remove = db.ExportProductDetails.Single(i => i.ExportProductDetailID == exportProductDetailID);
-                    if (MessageBox.Show("Bạn muốn xóa " + remove.ExportProductDetailID, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    int exportDetailID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ExportDetailID"].Value);
+                    var remove = db.ExportBillDetails.Single(i => i.ExportBillID == exportDetailID);
+                    if (MessageBox.Show("Bạn muốn xóa " + remove.ExportBillDetailID, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         var addQuantity = db.StockDetails.Single(i => i.StockDetailID == remove.StockDetailID);
                         addQuantity.Quantity += remove.Quantity;
                         db.SaveChanges();
-                        db.ExportProductDetails.Remove(remove);
+                        db.ExportBillDetails.Remove(remove);
                         db.SaveChanges();
                         loadData();
+                        comboBoxUnit_SelectedIndexChanged(sender, e);
+                        comboBoxProduct_SelectionChangeCommitted(sender, e);
                     }
                 }
                 catch (Exception ex)
@@ -136,29 +138,36 @@ namespace QuanLyKho
             }
            try
             {
+                exportBillID = Convert.ToInt32(comboBoxExportBill.SelectedValue);
                 ExportBillDetail exportBillDetail = new ExportBillDetail();
                 exportBillDetail.ExportBillID = exportBillID;
+                exportBillDetail.Quantity = Convert.ToInt32(maskedTextBoxQuantity.Text);
+                exportBillDetail.StockDetailID = stockDetailID;
+                exportBillDetail.Price = Convert.ToInt32(maskedTextBoxPrice.Text);
                 db.ExportBillDetails.Add(exportBillDetail);
-                db.SaveChanges();
-                ExportProductDetail exportProductDetail = new ExportProductDetail();
-                exportProductDetail.ExportBillDetailID = exportBillDetail.ExportBillDetailID;
-                exportProductDetail.Quantity = Convert.ToInt32(maskedTextBoxQuantity.Text);
-                exportProductDetail.StockDetailID = stockDetailID;
-                exportProductDetail.Price = Convert.ToInt32(maskedTextBoxPrice.Text);
-                db.ExportProductDetails.Add(exportProductDetail);
                 db.SaveChanges();
                 var handleQUantity = db.StockDetails
                     .Where(i => i.StockDetailID == stockDetailID)
                     .SingleOrDefault();
                 if (handleQUantity != null)
                 {
-                    handleQUantity.Quantity -= Convert.ToInt32(maskedTextBoxQuantity.Text);
+                    if(handleQUantity.Quantity > 0)
+                    {
+                        handleQUantity.Quantity -= Convert.ToInt32(maskedTextBoxQuantity.Text);
+                    }
+                    else
+                    {
+                        handleQUantity.Quantity = 0;
+                    }
+                    
                     db.SaveChanges();
                 }
                 loadData();
                 toolTip1.Show("Thêm thành công", button1, button1.Width, 0, 1000);
                 maskedTextBoxQuantity.Text = null;
                 maskedTextBoxPrice.Text = null;
+                comboBoxUnit_SelectedIndexChanged(sender, e);
+                comboBoxProduct_SelectionChangeCommitted(sender, e);
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -191,14 +200,14 @@ namespace QuanLyKho
         }
         private void loadData()
         {
-            var data = db.ExportProductDetails
-                .Include(i => i.ExportBillDetail)
-                .Where(i => i.ExportBillDetail.ExportBillID == exportBillID)
+            exportBillID = Convert.ToInt32(comboBoxExportBill.SelectedValue);
+            var data = db.ExportBillDetails
+                .Where(i => i.ExportBillID == exportBillID)
                 .Include(i => i.StockDetail)
                 .Include(i => i.StockDetail.Product)
                 .Include(i => i.StockDetail.Unit)
                 .Include(i => i.StockDetail.Stock)
-                .Select(i => new { ExportProductDetailID = i.ExportProductDetailID, ProductName = i.StockDetail.Product.Name, StockName = i.StockDetail.Stock.Name, UnitName = i.StockDetail.Unit.Name, Price  = i.Price, Quantity = i.Quantity,   Total = i.Quantity * i.Price})
+                .Select(i => new { ExportDetailID = i.ExportBillDetailID, ProductName = i.StockDetail.Product.Name, StockName = i.StockDetail.Stock.Name, UnitName = i.StockDetail.Unit.Name, Price  = i.Price, Quantity = i.Quantity,   Total = i.Quantity * i.Price})
                 .ToList();
             dataGridView1.DataSource = data;
 

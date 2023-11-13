@@ -18,7 +18,6 @@ namespace QuanLyKho
         public DbSet<Customer> Customers { get; set; }
         public DbSet<ExportBill> ExportBills { get; set; }
         public DbSet<ExportBillDetail> ExportBillDetails { get; set; }
-        public DbSet<ExportProductDetail> ExportProductDetails { get; set; }
         public DbSet<ImportBill> ImportBills { get; set; }
         public DbSet<ImportDetail> ImportDetail { get; set; }
         public DbSet<Stock> Stocks { get; set; }    

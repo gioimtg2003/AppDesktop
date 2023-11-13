@@ -70,7 +70,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ExportProductDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ExportProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,8 +80,6 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ExportProductDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -502,7 +502,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ExportProductDetailID,
+            this.ExportDetailID,
             this.EProductName,
             this.StockName,
             this.UnitName,
@@ -518,12 +518,32 @@
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // ExportProductDetailID
+            // panel2
             // 
-            this.ExportProductDetailID.DataPropertyName = "ExportProductDetailID";
-            this.ExportProductDetailID.HeaderText = "Mã chi tiết";
-            this.ExportProductDetailID.MinimumWidth = 6;
-            this.ExportProductDetailID.Name = "ExportProductDetailID";
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dateTimePickerCreateBill);
+            this.panel2.Controls.Add(this.maskedTextBoxNameAdmin);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(864, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(571, 57);
+            this.panel2.TabIndex = 26;
+            // 
+            // ExportProductDetail
+            // 
+            this.ExportProductDetail.DataPropertyName = "ExportProductDetail";
+            this.ExportProductDetail.HeaderText = "Mã chi tiết";
+            this.ExportProductDetail.MinimumWidth = 6;
+            this.ExportProductDetail.Name = "ExportProductDetail";
+            this.ExportProductDetail.Width = 90;
+            // 
+            // ExportDetailID
+            // 
+            this.ExportDetailID.DataPropertyName = "ExportDetailID";
+            this.ExportDetailID.HeaderText = "Mã chi tiết";
+            this.ExportDetailID.MinimumWidth = 6;
+            this.ExportDetailID.Name = "ExportDetailID";
             // 
             // EProductName
             // 
@@ -574,26 +594,6 @@
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dateTimePickerCreateBill);
-            this.panel2.Controls.Add(this.maskedTextBoxNameAdmin);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(864, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 57);
-            this.panel2.TabIndex = 26;
-            // 
-            // ExportProductDetail
-            // 
-            this.ExportProductDetail.DataPropertyName = "ExportProductDetail";
-            this.ExportProductDetail.HeaderText = "Mã chi tiết";
-            this.ExportProductDetail.MinimumWidth = 6;
-            this.ExportProductDetail.Name = "ExportProductDetail";
-            this.ExportProductDetail.Width = 90;
             // 
             // ProcessExportDetail
             // 
@@ -670,7 +670,7 @@
         private ComboBox comboBoxStock;
         private Label label8;
         private DataGridViewTextBoxColumn ExportProductDetail;
-        private DataGridViewTextBoxColumn ExportProductDetailID;
+        private DataGridViewTextBoxColumn ExportDetailID;
         private DataGridViewTextBoxColumn EProductName;
         private DataGridViewTextBoxColumn StockName;
         private DataGridViewTextBoxColumn UnitName;

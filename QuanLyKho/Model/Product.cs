@@ -19,7 +19,7 @@ namespace QuanLyKho.Model
         public string Name { get; set; }
         [Column(TypeName = "nvarchar(200)")]
         public string? Description { get; set; }
-        
+        public int price { get; set; }
         public ICollection<StockDetail> StockDetails { get; set; }
         public ICollection<ImportDetail> ImportDetails { get; set; }
     }

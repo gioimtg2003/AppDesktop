@@ -8,12 +8,12 @@ namespace QuanLyKho.Model
 {
     internal class ExportBillDetail
     {
-        public ExportBillDetail() { 
-            this.exportProductDetails = new HashSet<ExportProductDetail>();
-        }
         public int ExportBillDetailID { get; set; }
+        public int Quantity { get; set; }
+        public int Price { get; set; }
+        public int StockDetailID { get; set; }
         public int ExportBillID { get; set; }
         public ExportBill ExportBill { get; set; }
-        public ICollection<ExportProductDetail> exportProductDetails { get; set; }
+        public StockDetail StockDetail { get; set; }
     }
 }

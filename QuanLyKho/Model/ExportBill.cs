@@ -9,6 +9,9 @@ namespace QuanLyKho.Model
 {
     internal class ExportBill
     {
+        public ExportBill() {
+            this.exportBillDetails = new HashSet<ExportBillDetail>();
+        }
         public int ExportBillID { get; set; }
         [Column(TypeName = "nvarchar(50)")]
         public string? Description { get; set; }
@@ -18,6 +21,7 @@ namespace QuanLyKho.Model
         public DateTime CreateDate { get; set; }
         public Customer Customer { get; set; }
         public Administrator Administrator { get; set; }
+        public ICollection<ExportBillDetail> exportBillDetails { get; set; }
 
     }
 }
