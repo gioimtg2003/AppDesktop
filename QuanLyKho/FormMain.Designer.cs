@@ -32,19 +32,21 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddImportStock = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.chiTiếtXuấtKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddExportStock = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddCustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddImportStock = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddExportStock = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddCustomer = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.Report = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +58,8 @@
             this.toolStripMenuItem4,
             this.toolStripMenuItem6,
             this.toolStripMenuItem8,
-            this.toolStripMenuItem10});
+            this.toolStripMenuItem10,
+            this.Report});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
@@ -87,6 +90,13 @@
             this.toolStripMenuItem3.Text = "Chi tiết nhập kho";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
+            // AddImportStock
+            // 
+            this.AddImportStock.Name = "AddImportStock";
+            this.AddImportStock.Size = new System.Drawing.Size(242, 26);
+            this.AddImportStock.Text = "Tạo mới đơn nhập kho";
+            this.AddImportStock.Click += new System.EventHandler(this.AddImportStock_Click);
+            // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,6 +121,13 @@
             this.chiTiếtXuấtKhoToolStripMenuItem.Text = "Chi tiết xuất kho";
             this.chiTiếtXuấtKhoToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtXuấtKhoToolStripMenuItem_Click);
             // 
+            // AddExportStock
+            // 
+            this.AddExportStock.Name = "AddExportStock";
+            this.AddExportStock.Size = new System.Drawing.Size(237, 26);
+            this.AddExportStock.Text = "Tạo mới đơn xuất kho";
+            this.AddExportStock.Click += new System.EventHandler(this.AddExportStock_Click);
+            // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -123,9 +140,16 @@
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(233, 26);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(226, 26);
             this.toolStripMenuItem7.Text = "Quản lý khách hàng";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
+            // 
+            // AddCustomer
+            // 
+            this.AddCustomer.Name = "AddCustomer";
+            this.AddCustomer.Size = new System.Drawing.Size(226, 26);
+            this.AddCustomer.Text = "Tạo mới khách hàng";
+            this.AddCustomer.Click += new System.EventHandler(this.AddCustomer_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -139,9 +163,16 @@
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(213, 26);
             this.toolStripMenuItem9.Text = "Quản lý hàng hóa";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
+            // 
+            // AddProduct
+            // 
+            this.AddProduct.Name = "AddProduct";
+            this.AddProduct.Size = new System.Drawing.Size(213, 26);
+            this.AddProduct.Text = "Tạo mới hàng hóa";
+            this.AddProduct.Click += new System.EventHandler(this.AddProduct_Click);
             // 
             // toolStripMenuItem10
             // 
@@ -154,37 +185,24 @@
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(170, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem11.Text = "Quản lý kho";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
-            // AddImportStock
+            // Report
             // 
-            this.AddImportStock.Name = "AddImportStock";
-            this.AddImportStock.Size = new System.Drawing.Size(242, 26);
-            this.AddImportStock.Text = "Tạo mới đơn nhập kho";
-            this.AddImportStock.Click += new System.EventHandler(this.AddImportStock_Click);
+            this.Report.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem12});
+            this.Report.Name = "Report";
+            this.Report.Size = new System.Drawing.Size(77, 24);
+            this.Report.Text = "Báo cáo";
             // 
-            // AddExportStock
+            // toolStripMenuItem12
             // 
-            this.AddExportStock.Name = "AddExportStock";
-            this.AddExportStock.Size = new System.Drawing.Size(237, 26);
-            this.AddExportStock.Text = "Tạo mới đơn xuất kho";
-            this.AddExportStock.Click += new System.EventHandler(this.AddExportStock_Click);
-            // 
-            // AddCustomer
-            // 
-            this.AddCustomer.Name = "AddCustomer";
-            this.AddCustomer.Size = new System.Drawing.Size(233, 26);
-            this.AddCustomer.Text = "Tạo mới khách hàng";
-            this.AddCustomer.Click += new System.EventHandler(this.AddCustomer_Click);
-            // 
-            // AddProduct
-            // 
-            this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(224, 26);
-            this.AddProduct.Text = "Tạo mới hàng hóa";
-            this.AddProduct.Click += new System.EventHandler(this.AddProduct_Click);
+            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem12.Text = "test báo cáo";
+            this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
             // FormMain
             // 
@@ -225,5 +243,7 @@
         private ToolStripMenuItem AddExportStock;
         private ToolStripMenuItem AddCustomer;
         private ToolStripMenuItem AddProduct;
+        private ToolStripMenuItem Report;
+        private ToolStripMenuItem toolStripMenuItem12;
     }
 }

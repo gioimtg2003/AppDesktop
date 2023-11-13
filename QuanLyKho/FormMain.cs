@@ -132,5 +132,10 @@ namespace QuanLyKho
             var form = new AddProduct();
             form.Show();
         }
+
+        private void toolStripMenuItem12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
