@@ -20,6 +20,7 @@ namespace QuanLyKho
         private int unitID;
         private int stockDetailID;
         private int exportBillID;
+        private int count { get; set; }
         public ProcessExportDetail()
         {
             InitializeComponent();
@@ -57,6 +58,7 @@ namespace QuanLyKho
             comboBoxUnit.DisplayMember = "Name";
             comboBoxUnit.ValueMember = "UnitID";
             maskedTextBoxNameAdmin.Text = Utility.Employee.Name;
+            count = 0;
 
         }
 
@@ -68,9 +70,15 @@ namespace QuanLyKho
             var dataStockDetail = db.StockDetails
                 .Where(i => i.StockID == stockID)
                 .Include(i => i.Product)
-                .Select(i => new {i.Product.Name,i.Product.ProductID}).ToList();
+                .Select(i => new Product {Name = i.Product.Name, ProductID = i.Product.ProductID}).ToList();
+            maskedTextBox1.Text = null;
+            comboBoxUnit.DataSource = null;
+            comboBoxUnit.Items.Clear();
+            comboBoxProduct.DataSource = null;
+            comboBoxProduct.Items.Clear();
+            comboBoxProduct.DisplayMember = "Name";
+            comboBoxProduct.ValueMember = "ProductID";
             comboBoxProduct.DataSource = dataStockDetail;
-
         }
         private void comboBoxUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -78,8 +86,12 @@ namespace QuanLyKho
             var quantity = db.StockDetails
                 .Where(i => i.StockID == stockID && i.ProductID == productID && i.UnitID == unitID)
                 .SingleOrDefault();
-            maskedTextBox1.Text = quantity.Quantity.ToString();
-            stockDetailID = Convert.ToInt32(quantity.StockDetailID);
+            if (quantity != null)
+            {
+                maskedTextBox1.Text = quantity.Quantity.ToString();
+                stockDetailID = Convert.ToInt32(quantity.StockDetailID);
+            }
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -119,7 +131,8 @@ namespace QuanLyKho
                 .Select(i => new {Name = i.Unit.Name, UnitID = i.Unit.UnitID})
                 .ToList();
             comboBoxUnit.DataSource = Unit;
-
+            var product = db.Products.Single(i => i.ProductID == productID);
+            maskedTextBoxPrice.Text = product.price.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

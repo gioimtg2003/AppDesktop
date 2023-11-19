@@ -15,17 +15,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Report.Viewer" Version="11.0.0" />
     <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.18" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ChiTietKho.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ChiTietKho.xsd</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -47,13 +41,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="ChiTietKho.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ChiTietKho.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
 </Project>

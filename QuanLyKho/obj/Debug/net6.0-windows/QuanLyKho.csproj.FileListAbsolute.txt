@@ -34,12 +34,11 @@ C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-window
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
-C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.ReportViewer.ProcessingObjectModel.DLL
-C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.ReportViewer.WebForms.DLL
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.ReportViewer.Common.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.ReportViewer.DataVisualization.dll
+C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\Microsoft.ReportViewer.WinForms.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
 C:\Document\LapTrinhWindow\QuanLyKho\QuanLyKho\QuanLyKho\bin\Debug\net6.0-windows\System.Data.SqlClient.dll

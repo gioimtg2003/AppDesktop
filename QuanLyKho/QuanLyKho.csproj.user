@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Report1.cs">
+    <Compile Update="View\EditStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="View\EditStock.cs">
+    <Compile Update="View\ProcessExportDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="View\StockManage.cs">
@@ -46,16 +46,8 @@
     <Compile Update="View\ImportManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="View\ProcessExportDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="View\ProcessImportDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="ChiTietKho.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
 </Project>

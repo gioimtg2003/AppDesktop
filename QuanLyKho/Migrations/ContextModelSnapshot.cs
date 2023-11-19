@@ -31,24 +31,30 @@ namespace QuanLyKho.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdministratorID"));
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("char(16)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("char(10)");
 
                     b.Property<byte>("Role")
                         .HasColumnType("tinyint");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasColumnType("char(20)");
 
                     b.HasKey("AdministratorID");
@@ -78,15 +84,19 @@ namespace QuanLyKho.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerID"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("char(10)");
 
                     b.HasKey("CustomerID");
@@ -134,24 +144,6 @@ namespace QuanLyKho.Migrations
                     b.Property<int>("ExportBillID")
                         .HasColumnType("int");
 
-                    b.HasKey("ExportBillDetailID");
-
-                    b.HasIndex("ExportBillID");
-
-                    b.ToTable("ExportBillDetails");
-                });
-
-            modelBuilder.Entity("QuanLyKho.Model.ExportProductDetail", b =>
-                {
-                    b.Property<int>("ExportProductDetailID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExportProductDetailID"));
-
-                    b.Property<int>("ExportBillDetailID")
-                        .HasColumnType("int");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
@@ -161,13 +153,13 @@ namespace QuanLyKho.Migrations
                     b.Property<int>("StockDetailID")
                         .HasColumnType("int");
 
-                    b.HasKey("ExportProductDetailID");
+                    b.HasKey("ExportBillDetailID");
 
-                    b.HasIndex("ExportBillDetailID");
+                    b.HasIndex("ExportBillID");
 
                     b.HasIndex("StockDetailID");
 
-                    b.ToTable("ExportProductDetails");
+                    b.ToTable("ExportBillDetails");
                 });
 
             modelBuilder.Entity("QuanLyKho.Model.ImportBill", b =>
@@ -250,7 +242,11 @@ namespace QuanLyKho.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("price")
+                        .HasColumnType("int");
 
                     b.HasKey("ProductID");
 
@@ -261,49 +257,57 @@ namespace QuanLyKho.Migrations
                         {
                             ProductID = 1L,
                             Description = "Bút bi Thiên Long 20Cây/hộp màu xanh",
-                            Name = "Bút bi Thiên Long"
+                            Name = "Bút bi Thiên Long",
+                            price = 0
                         },
                         new
                         {
                             ProductID = 2L,
                             Description = "Thước kẻ 20cm hộp 30 cái",
-                            Name = "Thước kẻ 20cm"
+                            Name = "Thước kẻ 20cm",
+                            price = 0
                         },
                         new
                         {
                             ProductID = 3L,
                             Description = "Giấy in văn phòng 1 thùng 20 xấp",
-                            Name = "Giấy in văn phòng"
+                            Name = "Giấy in văn phòng",
+                            price = 0
                         },
                         new
                         {
                             ProductID = 4L,
                             Description = "Bút lông viết bảng (màu xanh) hộp 10 cái",
-                            Name = "Bút lông viết bảng (màu xanh)"
+                            Name = "Bút lông viết bảng (màu xanh)",
+                            price = 0
                         },
                         new
                         {
                             ProductID = 5L,
                             Description = "Gôm/Bút tẩy xóa",
-                            Name = "Gôm/Bút tẩy xóa"
+                            Name = "Gôm/Bút tẩy xóa",
+                            price = 0
                         },
                         new
                         {
                             ProductID = 6L,
                             Description = "Dao kéo, Băng keo",
-                            Name = "Dao kéo, Băng keo"
+                            Name = "Dao kéo, Băng keo",
+                            price = 0
                         },
                         new
                         {
                             ProductID = 7L,
                             Description = "Túi đựng hồ sơ và tài liệu",
-                            Name = "Túi đựng hồ sơ và tài liệu"
+                            Name = "Túi đựng hồ sơ và tài liệu",
+                            price = 0
                         },
                         new
                         {
                             ProductID = 8L,
                             Description = "Sổ tay học từ vựng",
-                            Name = "Sổ tay học từ vựng"
+                            Name = "Sổ tay học từ vựng",
+                            price = 0
                         });
                 });
 
@@ -316,9 +320,11 @@ namespace QuanLyKho.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockID"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("StockID");
@@ -380,6 +386,7 @@ namespace QuanLyKho.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UnitID"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("UnitID");
@@ -441,29 +448,18 @@ namespace QuanLyKho.Migrations
             modelBuilder.Entity("QuanLyKho.Model.ExportBillDetail", b =>
                 {
                     b.HasOne("QuanLyKho.Model.ExportBill", "ExportBill")
-                        .WithMany()
+                        .WithMany("exportBillDetails")
                         .HasForeignKey("ExportBillID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ExportBill");
-                });
-
-            modelBuilder.Entity("QuanLyKho.Model.ExportProductDetail", b =>
-                {
-                    b.HasOne("QuanLyKho.Model.ExportBillDetail", "ExportBillDetail")
-                        .WithMany("exportProductDetails")
-                        .HasForeignKey("ExportBillDetailID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("QuanLyKho.Model.StockDetail", "StockDetail")
-                        .WithMany("ExportProducts")
+                        .WithMany("ExportBillDetails")
                         .HasForeignKey("StockDetailID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ExportBillDetail");
+                    b.Navigation("ExportBill");
 
                     b.Navigation("StockDetail");
                 });
@@ -563,9 +559,9 @@ namespace QuanLyKho.Migrations
                     b.Navigation("importBills");
                 });
 
-            modelBuilder.Entity("QuanLyKho.Model.ExportBillDetail", b =>
+            modelBuilder.Entity("QuanLyKho.Model.ExportBill", b =>
                 {
-                    b.Navigation("exportProductDetails");
+                    b.Navigation("exportBillDetails");
                 });
 
             modelBuilder.Entity("QuanLyKho.Model.ImportBill", b =>
@@ -589,7 +585,7 @@ namespace QuanLyKho.Migrations
 
             modelBuilder.Entity("QuanLyKho.Model.StockDetail", b =>
                 {
-                    b.Navigation("ExportProducts");
+                    b.Navigation("ExportBillDetails");
                 });
 
             modelBuilder.Entity("QuanLyKho.Model.Unit", b =>
