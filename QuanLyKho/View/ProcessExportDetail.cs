@@ -72,6 +72,7 @@ namespace QuanLyKho
                 .Include(i => i.Product)
                 .Select(i => new Product {Name = i.Product.Name, ProductID = i.Product.ProductID}).ToList();
             maskedTextBox1.Text = null;
+            maskedTextBoxPrice.Text = null;
             comboBoxUnit.DataSource = null;
             comboBoxUnit.Items.Clear();
             comboBoxProduct.DataSource = null;
@@ -98,11 +99,11 @@ namespace QuanLyKho
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Delete")
             {
-                try
-                {
+                //try
+                //{
 
                     int exportDetailID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ExportDetailID"].Value);
-                    var remove = db.ExportBillDetails.Single(i => i.ExportBillID == exportDetailID);
+                    var remove = db.ExportBillDetails.Single(i => i.ExportBillDetailID == exportDetailID);
                     if (MessageBox.Show("Bạn muốn xóa " + remove.ExportBillDetailID, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         var addQuantity = db.StockDetails.Single(i => i.StockDetailID == remove.StockDetailID);
@@ -114,11 +115,11 @@ namespace QuanLyKho
                         comboBoxUnit_SelectedIndexChanged(sender, e);
                         comboBoxProduct_SelectionChangeCommitted(sender, e);
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message , "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message , "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
 
@@ -130,6 +131,8 @@ namespace QuanLyKho
                 .Include(i => i.Unit)
                 .Select(i => new {Name = i.Unit.Name, UnitID = i.Unit.UnitID})
                 .ToList();
+            comboBoxUnit.DisplayMember = "Name";
+            comboBoxUnit.ValueMember = "UnitID";
             comboBoxUnit.DataSource = Unit;
             var product = db.Products.Single(i => i.ProductID == productID);
             maskedTextBoxPrice.Text = product.price.ToString();
